@@ -68,3 +68,41 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Development
+
+### Install JSON Server
+
+1. install the server:
+
+```bash
+npm install json-server
+```
+
+2. create `db.json` file at project root. This is where data will be stored and initialize the file with content:
+
+```json
+{
+  "books": []
+}
+```
+
+3. add npm script to `package.json` file:
+
+```json
+{
+  "scripts": {
+    "server": "json-server -p 3001 --watch db.json"
+  }
+}
+```
+
+4. run the server:
+
+```bash
+npm run server
+```
+
+5. install `rest client` extension in VS Code. This allows us to call API from VS Code directly.
+
+6. create `api.http` file at project root to work with `rest client`:
