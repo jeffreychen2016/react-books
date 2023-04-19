@@ -1,6 +1,9 @@
 import { useState } from "react";
+import useBooksContext from "../hooks/use-books-context";
 
 function BookEdit({ book, onSubmit }) {
+  const { editBookById } = useBooksContext();
+
   // when click on edit, initialize the input with original book title
   const [title, setTitle] = useState(book.title);
 
@@ -10,7 +13,8 @@ function BookEdit({ book, onSubmit }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    onSubmit(book.id, title);
+    onSubmit();
+    editBookById(book.id, title);
   };
 
   return (
